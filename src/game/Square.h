@@ -1,19 +1,17 @@
 #ifndef MINESWEEPER_SQUARE_H
 #define MINESWEEPER_SQUARE_H
 
-#include <cstddef>
-
 namespace game {
 
 class Square {
 public:
-    Square(std::size_t x, std::size_t y);
+    Square(int x, int y);
 
     void setMine();
     bool hasMine() const;
 
-    void setMinesNearby(std::size_t mines);
-    std::size_t getMinesNearby() const;
+    void setMinesNearby(int mines);
+    int getMinesNearby() const;
 
     void unmark();
     void mark();
@@ -22,14 +20,14 @@ public:
     void reveal();
     bool isRevealed() const;
 
-    const std::size_t x;
-    const std::size_t y;
+    const int x;
+    const int y;
 
 private:
     bool marked = false;
     bool revealed = false;
     bool mine = false;
-    std::size_t minesNearby = 0;
+    int minesNearby = 0;
 };
 
 }

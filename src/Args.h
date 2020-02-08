@@ -9,8 +9,8 @@ struct Args {
     void usage();
 
     bool help = false;
-    std::size_t xSize = 10;
-    std::size_t ySize = 10;
+    int xSize = 10;
+    int ySize = 10;
     unsigned minesPercent = 14;
 };
 

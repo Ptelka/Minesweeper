@@ -13,11 +13,11 @@ public:
     int getY() const;
 
     void move(int x, int y);
-    void refresh();
+    void draw();
 
 private:
-    Rect<int> bounds;
     int x, y;
+    Rect<int> bounds;
 };
 
 }

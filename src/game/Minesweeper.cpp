@@ -5,7 +5,7 @@ namespace game {
 Minesweeper::Minesweeper(Grid grid)
 : grid(std::move(grid)), mines(grid.getMines()) { }
 
-void Minesweeper::mark(std::size_t x, std::size_t y) {
+void Minesweeper::mark(int x, int y) {
     auto& square = grid.get(x, y);
 
     if (square.isMarked()) {
@@ -21,7 +21,7 @@ void Minesweeper::mark(std::size_t x, std::size_t y) {
     }
 }
 
-void Minesweeper::reveal(std::size_t x, std::size_t y) {
+void Minesweeper::reveal(int x, int y) {
     auto& square = grid.get(x, y);
 
     if (square.hasMine()) {
@@ -55,7 +55,7 @@ void Minesweeper::revealMines() {
     }
 }
 
-void Minesweeper::revealNearby(std::size_t x, std::size_t y) {
+void Minesweeper::revealNearby(int x, int y) {
     if (!grid.rect.check(x, y)) {
         return;
     }
@@ -84,6 +84,10 @@ bool Minesweeper::lost() const {
 
 const Grid &Minesweeper::getGrid() const {
     return grid;
+}
+
+int Minesweeper::marks() const {
+    return marked;
 }
 
 }

@@ -30,10 +30,10 @@ Args::Args(int argc, char **argv) {
                 help = true;
                 break;
             case 'x':
-                xSize = std::stoul(optarg);
+                xSize = std::stoi(optarg);
                 break;
             case 'y':
-                ySize = std::stoul(optarg);
+                ySize = std::stoi(optarg);
                 break;
             case 'm':
                 minesPercent = static_cast<unsigned int>(std::stoi(optarg));

@@ -12,31 +12,31 @@ using Squares = std::vector<Square>;
 
 class Grid {
 public:
-    Grid(std::size_t width, std::size_t height, unsigned minesPercentage);
+    Grid(int width, int height, unsigned minesPercentage);
 
-    Square& get(std::size_t x, std::size_t y);
-    const Square& get(std::size_t x, std::size_t y) const;
+    Square& get(int x, int y);
+    const Square& get(int x, int y) const;
 
-    const Rect<std::size_t> rect;
+    const Rect<int> rect;
 
     Squares::const_iterator begin() const;
     Squares::const_iterator end() const;
     Squares::iterator begin();
     Squares::iterator end();
 
-    std::size_t size() const;
-    std::size_t getMines() const;
+    int size() const;
+    int getMines() const;
 
 private:
-    void validate(std::size_t x, std::size_t y) const;
+    void validate(int x, int y) const;
     void createSquares();
     void createMines(unsigned percentage);
     void fillMinesCount();
 
-    std::size_t calculateNearbyMinesCount(const Square& square);
+    int calculateNearbyMinesCount(const Square& square);
 
     Squares squares;
-    std::size_t mines = 0;
+    int mines = 0;
 };
 
 }

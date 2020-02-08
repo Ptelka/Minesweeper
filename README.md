@@ -18,4 +18,7 @@ Minesweeper -x 30 -m 40
 ```
 
 Dependencies:
-- ncurses
+- ncurses: install `libncurses5-dev` or `ncurses-devel` or equivalent
+
+Building:
+run `cmake . && make` in project root directory

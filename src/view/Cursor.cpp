@@ -28,7 +28,7 @@ void Cursor::move(int x, int y) {
     }
 }
 
-void Cursor::refresh() {
+void Cursor::draw() {
     ::move(this->x, this->y * 3 + 1);
 }
 

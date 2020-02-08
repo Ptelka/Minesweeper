@@ -2,7 +2,7 @@
 
 namespace game {
 
-Square::Square(std::size_t x, std::size_t y)
+Square::Square(int x, int y)
 : x(x), y(y) { }
 
 void Square::setMine() {
@@ -13,11 +13,11 @@ bool Square::hasMine() const {
     return mine;
 }
 
-void Square::setMinesNearby(std::size_t mines) {
+void Square::setMinesNearby(int mines) {
     minesNearby = mines;
 }
 
-std::size_t Square::getMinesNearby() const {
+int Square::getMinesNearby() const {
     return minesNearby;
 }
 
